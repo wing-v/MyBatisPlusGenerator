@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbSeckillGoodsMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbSeckillGoods">
+<mapper namespace="com.xiaozhisha.vv.Dao.TbSeckillGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbSeckillGoods">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
     <result column="item_id" jdbcType="BIGINT" property="itemId" />
@@ -33,7 +33,7 @@
     delete from tb_seckill_goods
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbSeckillGoods">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbSeckillGoods">
     insert into tb_seckill_goods (id, goods_id, item_id, 
       title, small_pic, price, 
       cost_price, seller_id, create_time, 
@@ -47,7 +47,7 @@
       #{endTime,jdbcType=TIMESTAMP}, #{num,jdbcType=INTEGER}, #{stockCount,jdbcType=INTEGER}, 
       #{introduction,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbSeckillGoods">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbSeckillGoods">
     insert into tb_seckill_goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -150,7 +150,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbSeckillGoods">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbSeckillGoods">
     update tb_seckill_goods
     <set>
       <if test="goodsId != null">
@@ -201,7 +201,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbSeckillGoods">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbSeckillGoods">
     update tb_seckill_goods
     set goods_id = #{goodsId,jdbcType=BIGINT},
       item_id = #{itemId,jdbcType=BIGINT},

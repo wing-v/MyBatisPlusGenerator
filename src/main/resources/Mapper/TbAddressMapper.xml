@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbAddressMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbAddress">
+<mapper namespace="com.xiaozhisha.vv.Dao.TbAddressMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbAddress">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
@@ -29,7 +29,7 @@
     delete from tb_address
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbAddress">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbAddress">
     insert into tb_address (id, user_id, province_id, 
       city_id, town_id, mobile, 
       address, contact, is_default, 
@@ -41,7 +41,7 @@
       #{notes,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{alias,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbAddress">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbAddress">
     insert into tb_address
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbAddress">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbAddress">
     update tb_address
     <set>
       <if test="userId != null">
@@ -159,7 +159,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbAddress">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbAddress">
     update tb_address
     set user_id = #{userId,jdbcType=VARCHAR},
       province_id = #{provinceId,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbGoodsMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbGoods">
+<mapper namespace="com.xiaozhisha.vv.Dao.TbGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbGoods">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="seller_id" jdbcType="VARCHAR" property="sellerId" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
@@ -34,7 +34,7 @@
     delete from tb_goods
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbGoods">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbGoods">
     insert into tb_goods (id, seller_id, goods_name, 
       default_item_id, audit_status, is_marketable, 
       brand_id, caption, category1_id, 
@@ -48,7 +48,7 @@
       #{price,jdbcType=DECIMAL}, #{typeTemplateId,jdbcType=BIGINT}, #{isEnableSpec,jdbcType=VARCHAR}, 
       #{isDelete,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbGoods">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbGoods">
     insert into tb_goods
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbGoods">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbGoods">
     update tb_goods
     <set>
       <if test="sellerId != null">
@@ -202,7 +202,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbGoods">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbGoods">
     update tb_goods
     set seller_id = #{sellerId,jdbcType=VARCHAR},
       goods_name = #{goodsName,jdbcType=VARCHAR},
@@ -221,4 +221,19 @@
       is_delete = #{isDelete,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="getGoodsList" parameterType="com.xiaozhisha.vv.Form.TbGoods" resultMap="BaseResultMap">
+    select
+        <include refid="Base_Column_List"/>
+    from tb_goods where 1=1
+    <if test="goods.sellerId != null and goods.sellerId !=''">
+      and seller_id = #{goods.sellerId}
+    </if>
+    <if test="goods.goodsName != null and goods.goodsName != ''">
+      and goods_name = #{goods.goodsName}
+    </if>
+    <if test="goods.price != null and goods.price != ''">
+    and price = #{goods.price}
+    </if>
+  </select>
 </mapper>

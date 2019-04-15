@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="E:\maven\LocalRepository\mysql\mysql-connector-java\5.1.35\mysql-connector-java-5.1.35.jar" />
+
+  <context id="DB2Tables" targetRuntime="MyBatis3">
+
+    <commentGenerator>
+      <!-- 当属性为false或未指定时，所有生成的注释都将包含生成元素时的时间戳。 -->
+      <property name ="suppressDate" value ="true"/>
+      <!-- 当属性为false或未指定时，所有生成的元素都将包含指示元素是生成元素的注释。 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/test"
+        userId="root"
+        password="root">
+    </jdbcConnection>
+
+    <!-- 数据库类型与java类型转换 -->
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <!-- 生成Model类存放位置 -->
+    <javaModelGenerator targetPackage="com.xiaozhisha.vv.Form" targetProject="src">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <!-- 生成映射文件 *mapper.xml存放位置 -->
+    <sqlMapGenerator targetPackage="com.xiaozhisha.vv.Mapper"  targetProject="src">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <!-- 生成Dao类存放位置 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.Dao" targetProject="src">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+     <!-- 生成对应表及类名 -->
+<!--         <table schema="test" tableName="%"
+            domainObjectName="%" enableCountByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false">
+            schema即为数据库名 tableName为对应的数据库表 为“%”时，生成所有的表 domainObjectName是要生成的实体类 enable*ByExample 
+                是否生成 example类
+ 
+               忽略列，不生成bean 字段
+              <ignoreColumn column="FRED" />
+                 指定列的java数据类型
+              <columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> 
+        </table> -->
+
+        <table tableName="tb_address" domainObjectName="TbAddress" enableCountByExample="false" enableUpdateByExample="false"     enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_order" domainObjectName="TbOrder" enableCountByExample="false" enableUpdateByExample="false"        enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_areas" domainObjectName="TbAreas" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_areas_copy" domainObjectName="TbAreasCopy"  enableCountByExample="false"  enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"  selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_brand" domainObjectName="TbBrand"  enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_cities" domainObjectName="TbCities" enableCountByExample="false" enableUpdateByExample="false"        enableDeleteByExample="false" enableSelectByExample="false"  selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_content" domainObjectName="TbContent" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+         <table tableName="tb_content_category" domainObjectName="TbContentCategory" enableCountByExample="false" enableUpdateByExample="false"        enableDeleteByExample="false" enableSelectByExample="false"  selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_freight_template" domainObjectName="TbFreightTemplate" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+          <table tableName="tb_goods" domainObjectName="TbGoods" enableCountByExample="false" enableUpdateByExample="false"        enableDeleteByExample="false" enableSelectByExample="false"  selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_goods_desc" domainObjectName="TbGoodsDesc" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+         <table tableName="tb_item" domainObjectName="TbItem" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_item_cat" domainObjectName="TbItemCat" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_order_item" domainObjectName="TbOrderItem" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_pay_log" domainObjectName="TbPayLog" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_provinces" domainObjectName="TbProvinces" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_seckill_goods" domainObjectName="TbSeckillGoods" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_seckill_order" domainObjectName="TbSeckillOrder" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_seller" domainObjectName="TbSeller" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_specification" domainObjectName="TbSpecification" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_specification_option" domainObjectName="TbSpecificationOption" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_type_template" domainObjectName="TbTypeTemplate" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table tableName="tb_user" domainObjectName="TbUser" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+
+    </context>
+</generatorConfiguration>

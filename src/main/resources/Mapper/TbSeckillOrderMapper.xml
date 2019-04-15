@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbSeckillOrderMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbSeckillOrder">
+<mapper namespace="com.xiaozhisha.vv.Dao.TbSeckillOrderMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbSeckillOrder">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="seckill_id" jdbcType="BIGINT" property="seckillId" />
     <result column="money" jdbcType="DECIMAL" property="money" />
@@ -29,7 +29,7 @@
     delete from tb_seckill_order
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbSeckillOrder">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbSeckillOrder">
     insert into tb_seckill_order (id, seckill_id, money, 
       user_id, seller_id, create_time, 
       pay_time, status, receiver_address, 
@@ -41,7 +41,7 @@
       #{receiverMobile,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{transactionId,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbSeckillOrder">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbSeckillOrder">
     insert into tb_seckill_order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -120,7 +120,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbSeckillOrder">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbSeckillOrder">
     update tb_seckill_order
     <set>
       <if test="seckillId != null">
@@ -159,7 +159,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbSeckillOrder">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbSeckillOrder">
     update tb_seckill_order
     set seckill_id = #{seckillId,jdbcType=BIGINT},
       money = #{money,jdbcType=DECIMAL},
