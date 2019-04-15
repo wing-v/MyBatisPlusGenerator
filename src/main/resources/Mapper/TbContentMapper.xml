@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Dao.TbContentMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbContent">
+<mapper namespace="com.xiaozhisha.vv.dao.TbContentMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbContent">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="category_id" jdbcType="BIGINT" property="categoryId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -23,7 +23,7 @@
     delete from tb_content
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbContent">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbContent">
     insert into tb_content (id, category_id, title, 
       url, pic, status, sort_order
       )
@@ -31,7 +31,7 @@
       #{url,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbContent">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbContent">
     insert into tb_content
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbContent">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbContent">
     update tb_content
     <set>
       <if test="categoryId != null">
@@ -104,7 +104,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbContent">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbContent">
     update tb_content
     set category_id = #{categoryId,jdbcType=BIGINT},
       title = #{title,jdbcType=VARCHAR},

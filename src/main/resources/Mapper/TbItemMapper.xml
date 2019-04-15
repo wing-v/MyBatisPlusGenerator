@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Dao.TbItemMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbItem">
+<mapper namespace="com.xiaozhisha.vv.dao.TbItemMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbItem">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="sell_point" jdbcType="VARCHAR" property="sellPoint" />
@@ -41,7 +41,7 @@
     delete from tb_item
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbItem">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbItem">
     insert into tb_item (id, title, sell_point, 
       price, stock_count, num, 
       barcode, image, categoryId, 
@@ -59,7 +59,7 @@
       #{cartThumbnail,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
       #{spec,jdbcType=VARCHAR}, #{seller,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbItem">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbItem">
     insert into tb_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -204,7 +204,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbItem">
     update tb_item
     <set>
       <if test="title != null">
@@ -276,7 +276,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbItem">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbItem">
     update tb_item
     set title = #{title,jdbcType=VARCHAR},
       sell_point = #{sellPoint,jdbcType=VARCHAR},

@@ -27,7 +27,7 @@
     </javaTypeResolver>
 
     <!-- 生成Model类存放位置 -->
-    <javaModelGenerator targetPackage="com.xiaozhisha.vv.Form" targetProject="src">
+    <javaModelGenerator targetPackage="com.xiaozhisha.vv.form" targetProject="src">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
@@ -38,7 +38,7 @@
     </sqlMapGenerator>
 
     <!-- 生成Dao类存放位置 -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.Dao" targetProject="src">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.dao" targetProject="src">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 

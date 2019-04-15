@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Dao.TbCitiesMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Form.TbCities">
+<mapper namespace="com.xiaozhisha.vv.dao.TbCitiesMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbCities">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="cityid" jdbcType="VARCHAR" property="cityid" />
     <result column="city" jdbcType="VARCHAR" property="city" />
@@ -20,13 +20,13 @@
     delete from tb_cities
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Form.TbCities">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbCities">
     insert into tb_cities (id, cityid, city, 
       provinceid)
     values (#{id,jdbcType=INTEGER}, #{cityid,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
       #{provinceid,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Form.TbCities">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbCities">
     insert into tb_cities
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Form.TbCities">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbCities">
     update tb_cities
     <set>
       <if test="cityid != null">
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Form.TbCities">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbCities">
     update tb_cities
     set cityid = #{cityid,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
