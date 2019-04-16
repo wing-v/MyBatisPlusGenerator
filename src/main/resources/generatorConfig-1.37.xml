@@ -38,7 +38,7 @@
     </sqlMapGenerator>
 
     <!-- 生成Dao类存放位置 -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.dao" targetProject="src">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.mapper" targetProject="src">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 

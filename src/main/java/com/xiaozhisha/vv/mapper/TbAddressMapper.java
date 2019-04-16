@@ -1,11 +1,11 @@
-package com.xiaozhisha.vv.dao;
+package com.xiaozhisha.vv.mapper;
 
 import com.xiaozhisha.vv.form.TbAddress;
 import org.springframework.stereotype.Repository;
 
 /**
  * @author lx
- * @date 2019/4/15 23:21
+ * @date 2019/4/15 23:24
  * @param 
  * @return 
  */

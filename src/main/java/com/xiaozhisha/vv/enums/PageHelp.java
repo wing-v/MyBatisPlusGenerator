@@ -1,4 +1,4 @@
-package com.xiaozhisha.vv.constantEnum;
+package com.xiaozhisha.vv.enums;
 
 public enum PageHelp {
     pageSize(1,"起始页"),

@@ -2,8 +2,8 @@ package com.xiaozhisha.vv.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.xiaozhisha.vv.dao.TbGoodsMapper;
-import com.xiaozhisha.vv.constantEnum.PageHelp;
+import com.xiaozhisha.vv.mapper.TbGoodsMapper;
+import com.xiaozhisha.vv.enums.PageHelp;
 import com.xiaozhisha.vv.form.TbGoods;
 import com.xiaozhisha.vv.service.IGoodsService;
 import lombok.extern.log4j.Log4j;

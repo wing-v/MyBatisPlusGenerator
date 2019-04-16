@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbTypeTemplateMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbTypeTemplate">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbTypeTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbTypeTemplate">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="spec_ids" jdbcType="VARCHAR" property="specIds" />
@@ -21,13 +21,13 @@
     delete from tb_type_template
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbTypeTemplate">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbTypeTemplate">
     insert into tb_type_template (id, name, spec_ids, 
       brand_ids, custom_attribute_items)
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{specIds,jdbcType=VARCHAR}, 
       #{brandIds,jdbcType=VARCHAR}, #{customAttributeItems,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbTypeTemplate">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbTypeTemplate">
     insert into tb_type_template
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbTypeTemplate">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbTypeTemplate">
     update tb_type_template
     <set>
       <if test="name != null">
@@ -82,7 +82,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbTypeTemplate">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbTypeTemplate">
     update tb_type_template
     set name = #{name,jdbcType=VARCHAR},
       spec_ids = #{specIds,jdbcType=VARCHAR},

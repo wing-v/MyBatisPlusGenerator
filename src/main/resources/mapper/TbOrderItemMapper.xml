@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbOrderItemMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbOrderItem">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbOrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbOrderItem">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="item_id" jdbcType="BIGINT" property="itemId" />
     <result column="goods_id" jdbcType="BIGINT" property="goodsId" />
@@ -26,7 +26,7 @@
     delete from tb_order_item
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbOrderItem">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbOrderItem">
     insert into tb_order_item (id, item_id, goods_id, 
       order_id, title, price, 
       num, total_fee, pic_path, 
@@ -36,7 +36,7 @@
       #{num,jdbcType=INTEGER}, #{totalFee,jdbcType=DECIMAL}, #{picPath,jdbcType=VARCHAR}, 
       #{sellerId,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbOrderItem">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbOrderItem">
     insert into tb_order_item
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -103,7 +103,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbOrderItem">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbOrderItem">
     update tb_order_item
     <set>
       <if test="itemId != null">
@@ -136,7 +136,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbOrderItem">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbOrderItem">
     update tb_order_item
     set item_id = #{itemId,jdbcType=BIGINT},
       goods_id = #{goodsId,jdbcType=BIGINT},

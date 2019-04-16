@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbItemCatMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbItemCat">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbItemCatMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbItemCat">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
@@ -20,13 +20,13 @@
     delete from tb_item_cat
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbItemCat">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbItemCat">
     insert into tb_item_cat (id, parent_id, name, 
       type_id)
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
       #{typeId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbItemCat">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbItemCat">
     insert into tb_item_cat
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbItemCat">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbItemCat">
     update tb_item_cat
     <set>
       <if test="parentId != null">
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbItemCat">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbItemCat">
     update tb_item_cat
     set parent_id = #{parentId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},

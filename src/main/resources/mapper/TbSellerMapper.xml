@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbSellerMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbSeller">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbSellerMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbSeller">
     <id column="seller_id" jdbcType="VARCHAR" property="sellerId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
@@ -43,7 +43,7 @@
     delete from tb_seller
     where seller_id = #{sellerId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbSeller">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbSeller">
     insert into tb_seller (seller_id, name, nick_name, 
       password, email, mobile, 
       telephone, status, address_detail, 
@@ -63,7 +63,7 @@
       #{legalPersonCardId,jdbcType=VARCHAR}, #{bankUser,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbSeller">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbSeller">
     insert into tb_seller
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="sellerId != null">
@@ -214,7 +214,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbSeller">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbSeller">
     update tb_seller
     <set>
       <if test="name != null">
@@ -289,7 +289,7 @@
     </set>
     where seller_id = #{sellerId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbSeller">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbSeller">
     update tb_seller
     set name = #{name,jdbcType=VARCHAR},
       nick_name = #{nickName,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbUserMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbUser">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbUserMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbUser">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -40,7 +40,7 @@
     delete from tb_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbUser">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbUser">
     insert into tb_user (id, username, password, 
       phone, email, created, 
       updated, source_type, nick_name, 
@@ -58,7 +58,7 @@
       #{points,jdbcType=INTEGER}, #{experienceValue,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP}, 
       #{lastLoginTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbUser">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbUser">
     insert into tb_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -197,7 +197,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbUser">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbUser">
     update tb_user
     <set>
       <if test="username != null">
@@ -266,7 +266,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbUser">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbUser">
     update tb_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

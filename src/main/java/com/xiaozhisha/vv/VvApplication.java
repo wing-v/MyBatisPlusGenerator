@@ -7,10 +7,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
+/**
+ * @author lx
+ * @date 2019/4/15 23:49
+ * @param 
+ * @return 
+ */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.xiaozhisha.vv"})
-@MapperScan(value = "com.xiaozhisha.vv.dao")
+@MapperScan(value = "com.xiaozhisha.vv.mapper")
 @RestController
 public class VvApplication {
 

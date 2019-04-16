@@ -1,4 +1,4 @@
-package com.xiaozhisha.vv.dao;
+package com.xiaozhisha.vv.mapper;
 
 import com.xiaozhisha.vv.form.TbTypeTemplate;
 

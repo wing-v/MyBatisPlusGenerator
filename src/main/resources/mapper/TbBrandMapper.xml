@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xiaozhisha.vv.Repository.TbBrandMapper">
-  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.Entity.TbBrand">
+<mapper namespace="com.xiaozhisha.vv.mapper.TbBrandMapper">
+  <resultMap id="BaseResultMap" type="com.xiaozhisha.vv.form.TbBrand">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="first_char" jdbcType="VARCHAR" property="firstChar" />
@@ -19,13 +19,13 @@
     delete from tb_brand
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xiaozhisha.vv.Entity.TbBrand">
+  <insert id="insert" parameterType="com.xiaozhisha.vv.form.TbBrand">
     insert into tb_brand (id, name, first_char
       )
     values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{firstChar,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.Entity.TbBrand">
+  <insert id="insertSelective" parameterType="com.xiaozhisha.vv.form.TbBrand">
     insert into tb_brand
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.Entity.TbBrand">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaozhisha.vv.form.TbBrand">
     update tb_brand
     <set>
       <if test="name != null">
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.Entity.TbBrand">
+  <update id="updateByPrimaryKey" parameterType="com.xiaozhisha.vv.form.TbBrand">
     update tb_brand
     set name = #{name,jdbcType=VARCHAR},
       first_char = #{firstChar,jdbcType=VARCHAR}

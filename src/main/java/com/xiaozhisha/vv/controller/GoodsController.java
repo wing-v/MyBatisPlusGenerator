@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+/**
+ * @author lx
+ * @date 2019/4/15 23:34
+ * @param
+ * @return
+ */
 @RestController
 @RequestMapping("product/manage")
 @Log4j
