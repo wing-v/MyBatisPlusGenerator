@@ -1,4 +1,5 @@
 package com.xiaozhisha.vv.utils;
+
 /**
  *  响应包装类
  * @author lx
@@ -7,8 +8,8 @@ package com.xiaozhisha.vv.utils;
  * @return
  */
 public class   WebResponse<T> {
-    private String resultCode;
-    private String resultMessage;
+    private String resultCode = "0000";
+    private String resultMessage = "请求成功";
     private T data;
 
     public String getResultCode() {
@@ -35,18 +36,25 @@ public class   WebResponse<T> {
         this.data = data;
     }
 
-    public WebResponse(String resultCode, String resultMessage, T data) {
-        this.resultCode = resultCode;
-        this.resultMessage = resultMessage;
-        this.data = data;
+    public static <T> WebResponse<T> getResponse(String resultCode,String message){
+            WebResponse<T> res = new WebResponse<T>();
+            res.setResultCode(resultCode);
+            res.setResultMessage(message);
+            return res;
     }
 
-    public WebResponse() { }
+    public static <T> WebResponse<T> getWebResponse(T json){
+        WebResponse<T> response = new WebResponse<>();
+        response.setData(json);
+        return null;
+    }
 
-    public WebResponse getSucWebResponse(T result){
-        WebResponse webResponse = new WebResponse();
-        webResponse.setResultCode("0000");
-        webResponse.setResultMessage("请求成功");
+    public boolean responseIsSucc(){
+        return "0000".equals(resultCode);
+    }
+
+    public static <T>WebResponse<T> getSucWebResponse(T result){
+        WebResponse<T> webResponse = new WebResponse<T>();
         webResponse.setData(result);
         return webResponse;
     }

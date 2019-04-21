@@ -1,8 +1,8 @@
 package com.xiaozhisha.vv.enums;
 
 public enum PageHelp {
-    pageSize(1,"起始页"),
-    pageNum (3,"每页条数");
+    pageSize(0,"起始页"),
+    pageNum (5,"每页条数");
 
     private final String name;
     private final int num;

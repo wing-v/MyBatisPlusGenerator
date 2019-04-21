@@ -2,6 +2,7 @@ package com.xiaozhisha.vv.controller;
 
 import com.xiaozhisha.vv.form.TbGoods;
 import com.xiaozhisha.vv.service.IGoodsService;
+import com.xiaozhisha.vv.utils.WebResponse;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,19 +17,27 @@ import java.util.List;
  * @return
  */
 @RestController
-@RequestMapping("product/manage")
+@RequestMapping("/product/manage")
 @Log4j
 public class GoodsController {
     @Autowired
     private IGoodsService goodsService;
 
-    @PostMapping("getGoodsList")
+    @PostMapping("/getGoodsList")
     public List<TbGoods> getGoodsList(TbGoods goods){
         return goodsService.getGoodsList(goods);
     }
 
-    @PostMapping(value = "selectGoodsList")
+    @PostMapping(value = "/selectGoodsList")
     public TbGoods selectGoodsList(Long id){
         return goodsService.selectByPrimaryKey(id);
+    }
+
+    @PostMapping("/getWebGoods")
+    public WebResponse<Object> getWebGoods(TbGoods goods){
+        WebResponse<Object> response = new WebResponse<>();
+        List<TbGoods> goodsList = goodsService.getGoodsList(goods);
+        response.setData(goodsList);
+        return response;
     }
 }
