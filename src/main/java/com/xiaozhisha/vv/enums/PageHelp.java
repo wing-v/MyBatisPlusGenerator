@@ -1,22 +1,23 @@
 package com.xiaozhisha.vv.enums;
 
 public enum PageHelp {
-    pageSize(0,"起始页"),
-    pageNum (5,"每页条数");
+    pageNum (1,"每页条数"),
+    pageSize(2,"起始页");
 
     private final String name;
-    private final int num;
+    private final int code;
 
-    PageHelp(int num, String name) {
+    PageHelp(int code, String name) {
         this.name = name;
-        this.num = num;
+        this.code = code;
     }
 
     public String getName() {
         return name;
+
     }
 
-    public int getNum() {
-        return num;
+    public int getCode() {
+        return code;
     }
 }

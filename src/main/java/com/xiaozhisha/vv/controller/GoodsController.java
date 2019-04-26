@@ -3,22 +3,21 @@ package com.xiaozhisha.vv.controller;
 import com.xiaozhisha.vv.form.TbGoods;
 import com.xiaozhisha.vv.service.IGoodsService;
 import com.xiaozhisha.vv.utils.WebResponse;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
 /**
  * @author lx
  * @date 2019/4/15 23:34
- * @param
- * @return
  */
 @RestController
 @RequestMapping("/product/manage")
-@Log4j
+@Slf4j
 public class GoodsController {
     @Autowired
     private IGoodsService goodsService;

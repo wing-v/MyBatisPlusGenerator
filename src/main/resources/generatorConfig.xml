@@ -27,18 +27,18 @@
     </javaTypeResolver>
 
     <!-- 生成Model类存放位置 -->
-    <javaModelGenerator targetPackage="com.xiaozhisha.vv.form" targetProject="src">
+    <javaModelGenerator targetPackage="com.xiaozhisha.vv.form" targetProject="F:\">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 
     <!-- 生成映射文件 *mapper.xml存放位置 -->
-    <sqlMapGenerator targetPackage="com.xiaozhisha.vv.Mapper"  targetProject="src">
+    <sqlMapGenerator targetPackage="com.xiaozhisha.vv.Mapper"  targetProject="F:\">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 
-    <!-- 生成Dao类存放位置 -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.mapper" targetProject="src">
+    <!-- 生成 Entity 类存放位置 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaozhisha.vv.mapper" targetProject="F:\">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
 
