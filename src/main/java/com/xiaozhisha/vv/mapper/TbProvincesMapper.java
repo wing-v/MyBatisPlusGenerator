@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbProvinces;
+import com.xiaozhisha.vv.entity.TbProvinces;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbProvincesMapper {
-    int deleteByPrimaryKey(Integer id);
+/**
+ * <p>
+ * 省份信息表 Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbProvincesMapper extends BaseMapper<TbProvinces> {
 
-    int insert(TbProvinces record);
-
-    int insertSelective(TbProvinces record);
-
-    TbProvinces selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(TbProvinces record);
-
-    int updateByPrimaryKey(TbProvinces record);
 }

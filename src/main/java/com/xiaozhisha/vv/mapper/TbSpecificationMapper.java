@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbSpecification;
+import com.xiaozhisha.vv.entity.TbSpecification;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbSpecificationMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbSpecificationMapper extends BaseMapper<TbSpecification> {
 
-    int insert(TbSpecification record);
-
-    int insertSelective(TbSpecification record);
-
-    TbSpecification selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbSpecification record);
-
-    int updateByPrimaryKey(TbSpecification record);
 }

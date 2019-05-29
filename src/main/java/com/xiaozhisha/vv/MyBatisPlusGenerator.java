@@ -12,6 +12,7 @@ import jdk.internal.org.objectweb.asm.commons.TryCatchBlockSorter;
 import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import jdk.nashorn.internal.ir.TryNode;
 import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
  * @author lx
  * @date 2019/4/26 22:17
  */
+@Slf4j
 public class MyBatisPlusGenerator {
     public static void main(String[] args) throws SQLException {
 
@@ -32,7 +34,7 @@ public class MyBatisPlusGenerator {
                 // 生成路径
                 .setOutputDir("F:\\workspace")
                 // 文件覆盖
-                .setFileOverride(false)
+                .setFileOverride(true)
                 // 主键策略
                 .setIdType(IdType.AUTO)
                 // 设置生成的service接口的名字的首字母是否为I
@@ -40,14 +42,16 @@ public class MyBatisPlusGenerator {
                 //生成基本的resultMap
                 .setBaseResultMap(true)
                 //生成基本的SQL片
-                .setBaseColumnList(true);
+                .setBaseColumnList(true)
+                //缓存
+                .setEnableCache(false);
 
         //2. 数据源配置
         DataSourceConfig dsConfig  = new DataSourceConfig();
         dsConfig.setDbType(DbType.MYSQL)
                 // 设置数据库类型
                 .setDriverName("com.mysql.jdbc.Driver")
-                .setUrl("jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8")
+                .setUrl("jdbc:mysql://localhost:3306/xzs_boot?useUnicode=true&characterEncoding=utf8")
                 .setUsername("root")
                 .setPassword("root");
 
@@ -61,7 +65,10 @@ public class MyBatisPlusGenerator {
                 // 数据库表映射到实体的命名策略
                 .setTablePrefix("")
                 // 生成的表 include 跟exclude不能同时存在
-                .setInclude("tb_areas","tb_address");
+                .setInclude("tb_hero","tb_address","tb_areas","tb_brand","tb_cities","tb_content","tb_content_category","tb_freight_template",
+                        "tb_goods","tb_goods_desc","tb_item","tb_item_cat","tb_order","tb_order_item","tb_pay_log","tb_provinces",
+                        "tb_seckill_goods","tb_seckill_order","tb_seller","tb_specification","tb_specification_option","tb_type_template",
+                        "tb_user");
 //                .setExclude("");  //排出的表
 
         //4. 包名策略配置
@@ -87,7 +94,7 @@ public class MyBatisPlusGenerator {
         try {
             System.err.println(ag.getCfg().getMap().get("abc"));
         }catch (NullPointerException e){
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 }

@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbTypeTemplate;
+import com.xiaozhisha.vv.entity.TbTypeTemplate;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbTypeTemplateMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbTypeTemplateMapper extends BaseMapper<TbTypeTemplate> {
 
-    int insert(TbTypeTemplate record);
-
-    int insertSelective(TbTypeTemplate record);
-
-    TbTypeTemplate selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbTypeTemplate record);
-
-    int updateByPrimaryKey(TbTypeTemplate record);
 }

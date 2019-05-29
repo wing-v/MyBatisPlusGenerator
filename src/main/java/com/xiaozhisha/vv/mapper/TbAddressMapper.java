@@ -1,25 +1,22 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbAddress;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.xiaozhisha.vv.entity.TbAddress;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author lx
- * @date 2019/4/15 23:24
- * @param 
- * @return 
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
  */
 @Repository
-public interface TbAddressMapper {
-    int deleteByPrimaryKey(Long id);
+public interface TbAddressMapper extends BaseMapper<TbAddress> {
 
-    int insert(TbAddress record);
-
-    int insertSelective(TbAddress record);
-
-    TbAddress selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbAddress record);
-
-    int updateByPrimaryKey(TbAddress record);
+    /**
+     * @param address
+     */
+    void delete(TbAddress address);
 }

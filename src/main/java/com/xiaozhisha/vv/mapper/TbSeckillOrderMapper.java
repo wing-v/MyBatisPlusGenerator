@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbSeckillOrder;
+import com.xiaozhisha.vv.entity.TbSeckillOrder;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbSeckillOrderMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbSeckillOrderMapper extends BaseMapper<TbSeckillOrder> {
 
-    int insert(TbSeckillOrder record);
-
-    int insertSelective(TbSeckillOrder record);
-
-    TbSeckillOrder selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbSeckillOrder record);
-
-    int updateByPrimaryKey(TbSeckillOrder record);
 }

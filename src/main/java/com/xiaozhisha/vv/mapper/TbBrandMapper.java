@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbBrand;
+import com.xiaozhisha.vv.entity.TbBrand;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbBrandMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbBrandMapper extends BaseMapper<TbBrand> {
 
-    int insert(TbBrand record);
-
-    int insertSelective(TbBrand record);
-
-    TbBrand selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbBrand record);
-
-    int updateByPrimaryKey(TbBrand record);
 }

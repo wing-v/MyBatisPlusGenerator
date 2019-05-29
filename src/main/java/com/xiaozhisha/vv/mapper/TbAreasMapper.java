@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbAreas;
+import com.xiaozhisha.vv.entity.TbAreas;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbAreasMapper {
-    int deleteByPrimaryKey(Integer id);
+/**
+ * <p>
+ * 行政区域县区信息表 Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbAreasMapper extends BaseMapper<TbAreas> {
 
-    int insert(TbAreas record);
-
-    int insertSelective(TbAreas record);
-
-    TbAreas selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(TbAreas record);
-
-    int updateByPrimaryKey(TbAreas record);
 }

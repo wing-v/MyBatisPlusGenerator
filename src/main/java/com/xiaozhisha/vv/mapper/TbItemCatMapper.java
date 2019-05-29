@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbItemCat;
+import com.xiaozhisha.vv.entity.TbItemCat;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbItemCatMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ * 商品类目 Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbItemCatMapper extends BaseMapper<TbItemCat> {
 
-    int insert(TbItemCat record);
-
-    int insertSelective(TbItemCat record);
-
-    TbItemCat selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbItemCat record);
-
-    int updateByPrimaryKey(TbItemCat record);
 }

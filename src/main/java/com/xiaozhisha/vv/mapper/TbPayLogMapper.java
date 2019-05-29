@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbPayLog;
+import com.xiaozhisha.vv.entity.TbPayLog;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbPayLogMapper {
-    int deleteByPrimaryKey(String outTradeNo);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbPayLogMapper extends BaseMapper<TbPayLog> {
 
-    int insert(TbPayLog record);
-
-    int insertSelective(TbPayLog record);
-
-    TbPayLog selectByPrimaryKey(String outTradeNo);
-
-    int updateByPrimaryKeySelective(TbPayLog record);
-
-    int updateByPrimaryKey(TbPayLog record);
 }

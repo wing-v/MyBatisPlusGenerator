@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbGoodsDesc;
+import com.xiaozhisha.vv.entity.TbGoodsDesc;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbGoodsDescMapper {
-    int deleteByPrimaryKey(Long goodsId);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbGoodsDescMapper extends BaseMapper<TbGoodsDesc> {
 
-    int insert(TbGoodsDesc record);
-
-    int insertSelective(TbGoodsDesc record);
-
-    TbGoodsDesc selectByPrimaryKey(Long goodsId);
-
-    int updateByPrimaryKeySelective(TbGoodsDesc record);
-
-    int updateByPrimaryKey(TbGoodsDesc record);
 }

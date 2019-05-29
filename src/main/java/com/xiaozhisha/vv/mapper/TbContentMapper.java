@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbContent;
+import com.xiaozhisha.vv.entity.TbContent;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbContentMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbContentMapper extends BaseMapper<TbContent> {
 
-    int insert(TbContent record);
-
-    int insertSelective(TbContent record);
-
-    TbContent selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbContent record);
-
-    int updateByPrimaryKey(TbContent record);
 }

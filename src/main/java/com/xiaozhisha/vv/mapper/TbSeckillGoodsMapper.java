@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbSeckillGoods;
+import com.xiaozhisha.vv.entity.TbSeckillGoods;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbSeckillGoodsMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbSeckillGoodsMapper extends BaseMapper<TbSeckillGoods> {
 
-    int insert(TbSeckillGoods record);
-
-    int insertSelective(TbSeckillGoods record);
-
-    TbSeckillGoods selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbSeckillGoods record);
-
-    int updateByPrimaryKey(TbSeckillGoods record);
 }

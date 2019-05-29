@@ -1,17 +1,16 @@
 package com.xiaozhisha.vv.mapper;
 
-import com.xiaozhisha.vv.form.TbUser;
+import com.xiaozhisha.vv.entity.TbUser;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
-public interface TbUserMapper {
-    int deleteByPrimaryKey(Long id);
+/**
+ * <p>
+ * 用户表 Mapper 接口
+ * </p>
+ *
+ * @author lixiao
+ * @since 2019-05-02
+ */
+public interface TbUserMapper extends BaseMapper<TbUser> {
 
-    int insert(TbUser record);
-
-    int insertSelective(TbUser record);
-
-    TbUser selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(TbUser record);
-
-    int updateByPrimaryKey(TbUser record);
 }
