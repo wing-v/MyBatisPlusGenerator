@@ -8,12 +8,7 @@ import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import jdk.internal.org.objectweb.asm.commons.TryCatchBlockSorter;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
-import jdk.nashorn.internal.ir.TryNode;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 /**
