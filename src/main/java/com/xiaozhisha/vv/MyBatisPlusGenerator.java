@@ -60,10 +60,11 @@ public class MyBatisPlusGenerator {
                 // 数据库表映射到实体的命名策略
                 .setTablePrefix("")
                 // 生成的表 include 跟exclude不能同时存在
-                .setInclude("tb_hero","tb_address","tb_areas","tb_brand","tb_cities","tb_content","tb_content_category","tb_freight_template",
-                        "tb_goods","tb_goods_desc","tb_item","tb_item_cat","tb_order","tb_order_item","tb_pay_log","tb_provinces",
-                        "tb_seckill_goods","tb_seckill_order","tb_seller","tb_specification","tb_specification_option","tb_type_template",
-                        "tb_user");
+                .setInclude("excel_template_config");
+//                .setInclude("tb_hero","tb_address","tb_areas","tb_brand","tb_cities","tb_content","tb_content_category","tb_freight_template",
+//                        "tb_goods","tb_goods_desc","tb_item","tb_item_cat","tb_order","tb_order_item","tb_pay_log","tb_provinces",
+//                        "tb_seckill_goods","tb_seckill_order","tb_seller","tb_specification","tb_specification_option","tb_type_template",
+//                        "tb_user");
 //                .setExclude("");  //排出的表
 
         //4. 包名策略配置
