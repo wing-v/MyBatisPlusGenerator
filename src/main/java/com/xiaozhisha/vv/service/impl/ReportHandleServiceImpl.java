@@ -65,37 +65,6 @@ public class ReportHandleServiceImpl implements ReportHandleService {
             heroes.add(hero);
             addresses.add(address);
         }
-
-        /*for (int i = 0; i < sheets; i++) {
-            //得到每一个sheet页
-            XSSFSheet sheetAt = workbook.getSheetAt(i);
-            log.info("sheet 名称为 ：sheetAt.getSheetName()  ", sheetAt.getSheetName());
-            //每一个sheet页有多少行
-            int physicalNumberOfRows = sheetAt.getPhysicalNumberOfRows();
-            log.info("本sheet的行数 为 ：physicalNumberOfRows  ", physicalNumberOfRows);
-
-            TbHero hero;
-            for (int j = 0; j < physicalNumberOfRows; j++) {
-                //标题行
-                if (j == 0) {
-                    continue;
-                }
-                hero = new TbHero();
-                //sheet中的每一行
-                XSSFRow row = sheetAt.createRow(j);
-                //确定每一行 多少列
-                int physicalNumberOfCells = row.getPhysicalNumberOfCells();
-                log.info(String.valueOf(physicalNumberOfCells));
-
-                hero.setBid(row.getCell(0).getStringCellValue());
-                hero.setName(row.getCell(1).getStringCellValue());
-                hero.setAge((int) row.getCell(2).getNumericCellValue());
-                hero.setDescription(row.getCell(3).getStringCellValue());
-                hero.setAddress(row.getCell(4).getStringCellValue());
-                log.info(hero.toString());
-                heroes.add(hero);
-            }
-        }*/
 //        插入前先删除数据
          beforeHandle(heroes,addresses);
 
