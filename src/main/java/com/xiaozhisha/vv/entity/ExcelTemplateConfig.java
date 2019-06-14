@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -15,6 +17,7 @@ import java.io.Serializable;
  * @since 2019-06-01
  */
 @TableName("excel_template_config")
+@Data
 public class ExcelTemplateConfig extends Model<ExcelTemplateConfig> {
 
     private static final long serialVersionUID = 1L;

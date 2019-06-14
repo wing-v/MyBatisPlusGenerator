@@ -1,6 +1,10 @@
 package com.xiaozhisha.vv.vo;
 
+import com.xiaozhisha.vv.entity.ExcelTemplateConfig;
 import lombok.Data;
+
+import java.io.InputStream;
+import java.util.List;
 
 /**
  * 报表配置实体
@@ -10,5 +14,7 @@ import lombok.Data;
 @Data
 public class OdsReportConfigVo {
 
+    private InputStream inputStream;
 
+    private List<ExcelTemplateConfig> excelTemplateConfigs;
 }

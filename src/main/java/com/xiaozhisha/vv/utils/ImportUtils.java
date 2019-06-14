@@ -1,7 +1,7 @@
 package com.xiaozhisha.vv.utils;
 
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 
 /**
  * description : 报表导入工具类
@@ -13,12 +13,12 @@ public class ImportUtils {
     /**
      * 读取cell 内容返回 String 类型
      */
-    public static String getCellValue(XSSFCell cell) {
+    public static String getCellValue(Cell cell) {
         if (null == cell){
             return "";
         }
         String cellValue = "";
-        CellType cellType = cell.getCellType();
+        CellType cellType = cell.getCellTypeEnum();
         switch (cellType) {
             case STRING:
                 cellValue = cell.getStringCellValue().trim();

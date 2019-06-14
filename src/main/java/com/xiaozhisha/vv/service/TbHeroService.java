@@ -13,5 +13,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface TbHeroService extends IService<TbHero> {
 
-    void delete(TbHero hero);
+
 }

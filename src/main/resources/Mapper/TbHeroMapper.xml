@@ -18,4 +18,7 @@
         id, bid, name, age, description, address, salary
     </sql>
 
+    <select id="deleteAll" >
+        delete * from tb_hero;
+    </select>
 </mapper>

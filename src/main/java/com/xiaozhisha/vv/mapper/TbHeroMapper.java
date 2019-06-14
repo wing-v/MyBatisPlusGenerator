@@ -14,6 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TbHeroMapper extends BaseMapper<TbHero> {
-
-    void delete(TbHero address);
+    void deleteAll();
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Excel 文件导入处理类
@@ -25,16 +24,14 @@ public class ReportHandleController {
 
 
     /**
-     * @param
-     * @return void
      * @description 导入Excel报表
      * @date 2019/5/1 17:01
      */
     @RequestMapping(value = "/import", method = RequestMethod.POST)
-    public void importReport(MultipartFile file, InputStream inputStream) throws IOException {
-//        Assert.isNull(file,"文件不能为空！！！！！！！！！");
+    public String importReport(MultipartFile file) throws IOException {
         String filename = file.getOriginalFilename();
-        log.info("file name is",filename);
-        reportHandleService.importReport(file,inputStream);
+        log.info("excel name is { } " + filename, filename);
+        reportHandleService.importReport(file);
+        return "success";
     }
 }

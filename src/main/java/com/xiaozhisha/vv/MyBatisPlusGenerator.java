@@ -38,6 +38,7 @@ public class MyBatisPlusGenerator {
                 .setBaseResultMap(true)
                 //生成基本的SQL片
                 .setBaseColumnList(true)
+
                 //缓存
                 .setEnableCache(false);
 
