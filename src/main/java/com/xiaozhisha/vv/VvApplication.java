@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @return 
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.xiaozhisha.vv"})
 @MapperScan(value = "com.xiaozhisha.vv.mapper")
 @RestController
 public class VvApplication {

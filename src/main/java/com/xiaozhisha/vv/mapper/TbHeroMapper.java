@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- *  Mapper 接口
+ *  mappers 接口
  * </p>
  *
  * @author lixiao

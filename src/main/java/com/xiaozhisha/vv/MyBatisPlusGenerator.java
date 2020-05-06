@@ -13,6 +13,7 @@ import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import jdk.nashorn.internal.ir.TryNode;
 import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ import java.sql.SQLException;
 @Slf4j
 public class MyBatisPlusGenerator {
     public static void main(String[] args) throws SQLException {
+        Logger logger = LoggerFactory.getLogger("MyBatisPlusGenerator");
 
         //1. 全局配置
         GlobalConfig config = new GlobalConfig();
@@ -94,7 +96,7 @@ public class MyBatisPlusGenerator {
         try {
             System.err.println(ag.getCfg().getMap().get("abc"));
         }catch (NullPointerException e){
-            log.error(e.getMessage());
+            logger.error("MyBatisPlusGenerator代码生成器报错 ：{}" +e.getMessage());
         }
     }
 }
