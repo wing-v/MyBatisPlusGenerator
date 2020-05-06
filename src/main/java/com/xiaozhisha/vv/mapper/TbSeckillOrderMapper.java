@@ -2,6 +2,7 @@ package com.xiaozhisha.vv.mapper;
 
 import com.xiaozhisha.vv.entity.TbSeckillOrder;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @author lixiao
  * @since 2019-05-02
  */
+@Mapper
 public interface TbSeckillOrderMapper extends BaseMapper<TbSeckillOrder> {
 
 }

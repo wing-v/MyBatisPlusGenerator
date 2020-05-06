@@ -1,9 +1,7 @@
 package com.xiaozhisha.vv;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @return 
  */
 @SpringBootApplication
-@MapperScan(value = "com.xiaozhisha.vv.mapper")
 @RestController
 public class VvApplication {
 

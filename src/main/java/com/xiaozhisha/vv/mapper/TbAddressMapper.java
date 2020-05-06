@@ -3,6 +3,7 @@ package com.xiaozhisha.vv.mapper;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.xiaozhisha.vv.entity.TbAddress;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Repository;
  * @since 2019-05-02
  */
 @Mapper
+@Component
 public interface TbAddressMapper extends BaseMapper<TbAddress> {
 
     /**
